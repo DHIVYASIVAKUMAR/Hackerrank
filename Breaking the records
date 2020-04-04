@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+       Scanner scanner = new Scanner(System.in);
+       int n = scanner.nextInt();
+       int maxScore ,minScore,minCount=0,maxCount=0;
+       int[] scores = new int[n];
+       scores[0]=scanner.nextInt();
+       maxScore = scores[0];
+       minScore = scores[0];
+       for(int i=1; i<n;i++){
+           scores[i] = scanner.nextInt();
+           if(scores[i]< minScore){
+               minCount++;
+               minScore = scores[i];
+           }
+           if(scores[i] > maxScore){
+               maxCount++;
+               maxScore = scores[i];
+           }
+       }
+       System.out.println(maxCount +" "+minCount);
+    }
+}
