@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int n,k,subtot = 0;
+        n = scanner.nextInt();
+        k = scanner.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = scanner.nextInt();
+            if(i==k){
+                arr[i]=0;
+            }
+            subtot += arr[i];
+        }
+        int bill = scanner.nextInt();
+        subtot = subtot/2;
+        if(bill == subtot){
+            System.out.println("Bon Appetit");
+        }
+        else{
+            System.out.println(bill-subtot);
+        }
+               
+    }
+}
